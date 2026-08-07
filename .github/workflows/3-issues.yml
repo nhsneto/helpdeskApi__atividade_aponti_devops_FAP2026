@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   issue-triagem:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Adicionar label de triagem
