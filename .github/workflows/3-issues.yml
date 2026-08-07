@@ -19,7 +19,7 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           RESPONSAVEL: ${{ github.repository_owner }}
         run: |
-          if ! gh api "repos/$GH_REPO/labels/triagem"; &>/dev/null then
+          if ! gh api "repos/$GH_REPO/labels/triagem" &>/dev/null; then
             gh label create "triagem" --description "Issue aguardando triagem"
           fi
           gh issue edit "$NUMBER" --add-label "triagem" --add-assignee "$RESPONSAVEL"
