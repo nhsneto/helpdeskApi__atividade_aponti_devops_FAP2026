@@ -15,6 +15,7 @@ jobs:
       - name: Adicionar label de triagem
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           RESPONSAVEL: ${{ github.repository_owner }}
         run: |
