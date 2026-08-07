@@ -19,5 +19,6 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           RESPONSAVEL: ${{ github.repository_owner }}
         run: |
+          gh label create "triagem" --description "Issue aguardando triagem"
           gh issue edit "$NUMBER" --add-label "triagem" --add-assignee "$RESPONSAVEL"
           gh issue comment "$NUMBER" --body "Muito obrigado por abrir esta issue. $RESPONSAVEL vai analisá-la em breve."
